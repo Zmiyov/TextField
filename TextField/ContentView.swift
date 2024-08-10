@@ -6,17 +6,20 @@
 //
 
 import SwiftUI
+import SwiftUIIntrospect
+
+enum TextFieldState {
+    case base
+    case active
+    case wrong
+}
 
 struct ContentView: View {
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        HomeSwiftUIView()
     }
+    
 }
 
 #Preview {

@@ -11,6 +11,10 @@
 		A528E74A2C66A0BD00EA06A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528E7492C66A0BD00EA06A9 /* ContentView.swift */; };
 		A528E74C2C66A0BF00EA06A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A528E74B2C66A0BF00EA06A9 /* Assets.xcassets */; };
 		A528E74F2C66A0BF00EA06A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A528E74E2C66A0BF00EA06A9 /* Preview Assets.xcassets */; };
+		A528E7572C66A51C00EA06A9 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = A528E7562C66A51C00EA06A9 /* SwiftUIIntrospect */; };
+		A528E75A2C66B2F200EA06A9 /* TextFieldComponentSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528E7592C66B2F200EA06A9 /* TextFieldComponentSwiftUIView.swift */; };
+		A528E75C2C66B38500EA06A9 /* HomeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528E75B2C66B38500EA06A9 /* HomeSwiftUIView.swift */; };
+		A528E75F2C67315100EA06A9 /* String+Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528E75E2C67315100EA06A9 /* String+Mask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,9 @@
 		A528E7492C66A0BD00EA06A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A528E74B2C66A0BF00EA06A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A528E74E2C66A0BF00EA06A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A528E7592C66B2F200EA06A9 /* TextFieldComponentSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponentSwiftUIView.swift; sourceTree = "<group>"; };
+		A528E75B2C66B38500EA06A9 /* HomeSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSwiftUIView.swift; sourceTree = "<group>"; };
+		A528E75E2C67315100EA06A9 /* String+Mask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Mask.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A528E7572C66A51C00EA06A9 /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +59,8 @@
 		A528E7462C66A0BD00EA06A9 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
+				A528E75D2C67312E00EA06A9 /* Extension */,
+				A528E7582C66B2D000EA06A9 /* View */,
 				A528E7472C66A0BD00EA06A9 /* TextFieldApp.swift */,
 				A528E7492C66A0BD00EA06A9 /* ContentView.swift */,
 				A528E74B2C66A0BF00EA06A9 /* Assets.xcassets */,
@@ -65,6 +75,23 @@
 				A528E74E2C66A0BF00EA06A9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A528E7582C66B2D000EA06A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A528E7592C66B2F200EA06A9 /* TextFieldComponentSwiftUIView.swift */,
+				A528E75B2C66B38500EA06A9 /* HomeSwiftUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A528E75D2C67312E00EA06A9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A528E75E2C67315100EA06A9 /* String+Mask.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +110,9 @@
 			dependencies = (
 			);
 			name = TextField;
+			packageProductDependencies = (
+				A528E7562C66A51C00EA06A9 /* SwiftUIIntrospect */,
+			);
 			productName = TextField;
 			productReference = A528E7442C66A0BD00EA06A9 /* TextField.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +141,9 @@
 				Base,
 			);
 			mainGroup = A528E73B2C66A0BD00EA06A9;
+			packageReferences = (
+				A528E7552C66A51C00EA06A9 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
 			productRefGroup = A528E7452C66A0BD00EA06A9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A528E75F2C67315100EA06A9 /* String+Mask.swift in Sources */,
 				A528E74A2C66A0BD00EA06A9 /* ContentView.swift in Sources */,
+				A528E75A2C66B2F200EA06A9 /* TextFieldComponentSwiftUIView.swift in Sources */,
 				A528E7482C66A0BD00EA06A9 /* TextFieldApp.swift in Sources */,
+				A528E75C2C66B38500EA06A9 /* HomeSwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +316,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +346,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +382,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A528E7552C66A51C00EA06A9 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A528E7562C66A51C00EA06A9 /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A528E7552C66A51C00EA06A9 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = SwiftUIIntrospect;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A528E73C2C66A0BD00EA06A9 /* Project object */;
 }
