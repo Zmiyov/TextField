@@ -15,6 +15,11 @@
 		A528E75A2C66B2F200EA06A9 /* TextFieldComponentSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528E7592C66B2F200EA06A9 /* TextFieldComponentSwiftUIView.swift */; };
 		A528E75C2C66B38500EA06A9 /* HomeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528E75B2C66B38500EA06A9 /* HomeSwiftUIView.swift */; };
 		A528E75F2C67315100EA06A9 /* String+Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528E75E2C67315100EA06A9 /* String+Mask.swift */; };
+		A528E7682C68E1A300EA06A9 /* ValidationPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528E7672C68E1A300EA06A9 /* ValidationPreferenceKey.swift */; };
+		A528E76A2C68E24600EA06A9 /* ValidationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528E7692C68E24600EA06A9 /* ValidationModifier.swift */; };
+		A528E76C2C68E36700EA06A9 /* TextField+Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528E76B2C68E36700EA06A9 /* TextField+Validate.swift */; };
+		A528E76E2C68E3F700EA06A9 /* SecureField+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528E76D2C68E3F700EA06A9 /* SecureField+Validation.swift */; };
+		A528E7702C68E43D00EA06A9 /* TextFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528E76F2C68E43D00EA06A9 /* TextFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		A528E7592C66B2F200EA06A9 /* TextFieldComponentSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponentSwiftUIView.swift; sourceTree = "<group>"; };
 		A528E75B2C66B38500EA06A9 /* HomeSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSwiftUIView.swift; sourceTree = "<group>"; };
 		A528E75E2C67315100EA06A9 /* String+Mask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Mask.swift"; sourceTree = "<group>"; };
+		A528E7672C68E1A300EA06A9 /* ValidationPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationPreferenceKey.swift; sourceTree = "<group>"; };
+		A528E7692C68E24600EA06A9 /* ValidationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationModifier.swift; sourceTree = "<group>"; };
+		A528E76B2C68E36700EA06A9 /* TextField+Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Validate.swift"; sourceTree = "<group>"; };
+		A528E76D2C68E3F700EA06A9 /* SecureField+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecureField+Validation.swift"; sourceTree = "<group>"; };
+		A528E76F2C68E43D00EA06A9 /* TextFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,7 @@
 		A528E7462C66A0BD00EA06A9 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
+				A528E7662C68E17600EA06A9 /* Validation */,
 				A528E75D2C67312E00EA06A9 /* Extension */,
 				A528E7582C66B2D000EA06A9 /* View */,
 				A528E7472C66A0BD00EA06A9 /* TextFieldApp.swift */,
@@ -90,8 +101,20 @@
 			isa = PBXGroup;
 			children = (
 				A528E75E2C67315100EA06A9 /* String+Mask.swift */,
+				A528E76B2C68E36700EA06A9 /* TextField+Validate.swift */,
+				A528E76D2C68E3F700EA06A9 /* SecureField+Validation.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		A528E7662C68E17600EA06A9 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				A528E7672C68E1A300EA06A9 /* ValidationPreferenceKey.swift */,
+				A528E7692C68E24600EA06A9 /* ValidationModifier.swift */,
+				A528E76F2C68E43D00EA06A9 /* TextFormView.swift */,
+			);
+			path = Validation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +194,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A528E75F2C67315100EA06A9 /* String+Mask.swift in Sources */,
+				A528E7702C68E43D00EA06A9 /* TextFormView.swift in Sources */,
+				A528E76C2C68E36700EA06A9 /* TextField+Validate.swift in Sources */,
+				A528E76A2C68E24600EA06A9 /* ValidationModifier.swift in Sources */,
+				A528E7682C68E1A300EA06A9 /* ValidationPreferenceKey.swift in Sources */,
 				A528E74A2C66A0BD00EA06A9 /* ContentView.swift in Sources */,
 				A528E75A2C66B2F200EA06A9 /* TextFieldComponentSwiftUIView.swift in Sources */,
+				A528E76E2C68E3F700EA06A9 /* SecureField+Validation.swift in Sources */,
 				A528E7482C66A0BD00EA06A9 /* TextFieldApp.swift in Sources */,
 				A528E75C2C66B38500EA06A9 /* HomeSwiftUIView.swift in Sources */,
 			);

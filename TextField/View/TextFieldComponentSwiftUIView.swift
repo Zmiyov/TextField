@@ -55,3 +55,9 @@ struct TextFieldComponentSwiftUIView: View {
 #Preview {
     TextFieldComponentSwiftUIView(name: "",helper: "", errorHelper: "", maxSymbolsCount: 9, text: .constant(""), isValid: .constant(.base))
 }
+
+extension TextFieldComponentSwiftUIView {
+    func validate(_ flag: @escaping () -> Bool) -> some View {
+        self.modifier(ValidationModifier(validation: flag))
+    }
+}

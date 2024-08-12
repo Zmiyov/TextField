@@ -11,6 +11,7 @@ struct HomeSwiftUIView: View {
     enum Field {
         case pin
         case phone
+        case check
     }
     @FocusState private var focusedField: Field?
     
@@ -22,38 +23,55 @@ struct HomeSwiftUIView: View {
     
     var body: some View {
         
-        VStack {
-            TextFieldComponentSwiftUIView(name: "Pin*", helper: "Enter pin", errorHelper: "Enter valid pin", maxSymbolsCount: 9, text: $pinText, isValid: $isPinValid)
-                .focused($focusedField, equals: .pin)
-                .onChange(of: pinText, perform: { newValue in
-                    applyMask(text: &pinText, newValue: newValue, count: 9, pattern: "####-####")
-                })
-                .onChange(of: focusedField) { newField in
-                    if newField != .pin {
-                        isPinValid = checkPin() ? .wrong : (pinText != "" ? .active : .base)
-                    } else {
-                        isPinValid = .active
+        TextFormView { validate in
+            VStack {
+                TextFieldComponentSwiftUIView(name: "Pin*", helper: "Enter pin", errorHelper: "Enter valid pin", maxSymbolsCount: 9, text: $pinText, isValid: $isPinValid)
+                    .validate({
+                        checkPin()
+                    })
+                    .focused($focusedField, equals: .pin)
+                    .onChange(of: pinText, perform: { newValue in
+                        applyMask(text: &pinText, newValue: newValue, count: 9, pattern: "####-####")
+                    })
+                    .onChange(of: focusedField) { newField in
+                        if newField == .pin {
+                            isPinValid = .active
+                        } else {
+//                            isPinValid = checkPin() ? .active : (pinText != "" ? .wrong : .base)
+                            isPinValid = checkPin() ? .active : .wrong
+                        }
                     }
-                }
-            
-            TextFieldComponentSwiftUIView(name: "Phone", helper: "Enter phone", errorHelper: "Enter valid phone", maxSymbolsCount: 17, text: $phoneText, isValid: $isPhoneValid)
-                .focused($focusedField, equals: .phone)
-                .onChange(of: phoneText, perform: { newValue in
-                    applyMask(text: &phoneText, newValue: newValue, count: 17, pattern: "+### ## ### ## ##")
-                })
-                .onChange(of: focusedField) { newField in
-                    if newField != .phone {
-                        isPhoneValid = phoneText != "" ? .active : .base
-                    } else {
-                        isPhoneValid = .active
+                
+                TextFieldComponentSwiftUIView(name: "Phone", helper: "Enter phone", errorHelper: "Enter valid phone", maxSymbolsCount: 17, text: $phoneText, isValid: $isPhoneValid)
+                    .validate({
+                        checkPhone()
+                    })
+                    .focused($focusedField, equals: .phone)
+                    .onChange(of: phoneText, perform: { newValue in
+                        applyMask(text: &phoneText, newValue: newValue, count: 17, pattern: "+### ## ### ## ##")
+                    })
+                    .onChange(of: focusedField) { newField in
+                        if newField == .phone {
+                            isPhoneValid = .active
+                        } else {
+                            isPhoneValid = checkPhone() ? .active : .wrong
+                        }
                     }
-                }
-            
-            Button(action: {
-                checkAllFields()
-            }, label: {
-                Text("Verify")
-            })
+                
+             
+                
+                Button(action: {
+                    focusedField = nil
+                    if !validate() {
+                        print("Not validated")
+                        return
+                    } else {
+                        print("Validated")
+                    }
+                }, label: {
+                    Text("Verify")
+                })
+            }
         }
     }
     
@@ -66,16 +84,19 @@ struct HomeSwiftUIView: View {
     }
     
     private func checkPin() -> Bool {
-        return pinText.count < 9
+//        let result = pinText.count == 9
+//        if !result {
+//            isPinValid = .wrong
+//        } else {
+//            
+//        }
+        return pinText.count == 9
     }
     
     private func checkPhone() -> Bool {
-        return !pinText.isEmpty && pinText.count < 17
+        return phoneText.count == 17
     }
-    
-    private func checkAllFields() {
-        
-    }
+
 }
 
 #Preview {
